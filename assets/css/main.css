@@ -2377,7 +2377,8 @@
 
 #logo {
     max-width: 100px;
-    margin-top: -30px
+    margin-top: -25px;
+    margin-bottom: -40px;
 }
 
 
@@ -2426,13 +2427,31 @@
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #444444;
-		background-image: url("../../images/banner1.jpg");
+
+
 		/* background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/banner1.jpg"); *
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, 100%, cover;
         */
         
+
+        -webkit-animation: bgSlider;
+                animation: bgSlider;
+        -webkit-animation-duration: 20s;
+                animation-duration: 20s;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+
+        -webkit-transition: background-image 1s;
+        -o-transition: background-image 1s;
+        transition: background-image 1s;
+        moz-transition: background-image 1s;
+        webkit-transition: background-image 1s;
+        /*transition-timing-function: ease-in-out;*/
+
         background-position: top left;
 		background-repeat:  no-repeat;
 		background-size:  cover;
@@ -2442,6 +2461,42 @@
 		text-align: center;
         height: 100vh;
 	}
+
+@-webkit-keyframes bgSlider {
+    0% {
+        background-image: url("../../images/banner/1.jpg");
+    }
+    25% {
+        background-image: url("../../images/banner/2.jpg");
+    }
+    50% {
+        background-image: url("../../images/banner/3.jpg");
+    }
+    75% {
+        background-image: url("../../images/banner/4.jpg");
+    }
+    100% {
+        background-image: url("../../images/banner/5.jpg");
+    }
+}
+
+@keyframes bgSlider {
+    0% {
+        background-image: url("../../images/banner/1.jpg");
+    }
+    25% {
+        background-image: url("../../images/banner/2.jpg");
+    }
+    50% {
+        background-image: url("../../images/banner/3.jpg");
+    }
+    75% {
+        background-image: url("../../images/banner/4.jpg");
+    }
+    100% {
+        background-image: url("../../images/banner/5.jpg");
+    }
+}
 
 		#banner .inner {
 			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
