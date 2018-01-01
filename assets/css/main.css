@@ -1926,7 +1926,7 @@
 			cursor: default;
 			display: block;
 			margin: 0 0 1.5em 0;
-			opacity: 0.35;
+
 			text-align: center;
             transition: opacity 0.35s;
 		}
@@ -1944,9 +1944,6 @@
 			display: none;
 		}
 
-        .icon.featured:hover {
-			opacity: 1;
-		}
 
 
 /* List */
@@ -2393,8 +2390,8 @@
 
 #logo {
     max-width: 58px;
-    margin-top: -28px;
-    margin-bottom: -40px;
+    margin-top: -10px;
+    margin-bottom: -15px;
 }
 
 
@@ -2430,7 +2427,7 @@
 		}
 	}
 
-	@keyframes reveal-banner {
+@keyframes reveal-banner {
 		0% {
 			opacity: 0;
 		}
@@ -5452,7 +5449,15 @@
 
 
 
+.justified {
+    text-align: justify;
+}
 
+
+
+.strong {
+    font-weight: 600;
+}
 
 
 
