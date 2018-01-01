@@ -1826,11 +1826,17 @@
 		.image.featured {
 			display: block;
 			margin: 0 0 2em 0;
+            transition: transform 0.5s;
 		}
 
 			.image.featured img {
 				display: block;
 				width: 100%;
+
+			}
+
+            .image.featured:hover {
+				transform: scale(1.1,1.1);
 			}
 
 /* Icon */
@@ -1929,9 +1935,18 @@
 				line-height: 1em;
 			}
 
+            .icon.featured img {
+                max-height: 150px;
+			}
+
 		.icon > .label {
 			display: none;
 		}
+
+        .icon.featured:hover {
+			opacity: 1;
+		}
+
 
 /* List */
 
