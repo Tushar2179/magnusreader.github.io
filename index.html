@@ -59,7 +59,68 @@
                         <li><a href="#" class="button fit scrolly">Registeration to be opened soon</a></li>
                     </ul>
                 </footer>
+                <div id="clockdiv">
+                    <div>
+                        <span class="days"></span>
+                        <div class="smalltext">Days</div>
+                    </div>
+                    <div>
+                        <span class="hours"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div>
+                <script>
+                    function getTimeRemaining(endtime) {
+                        var t = Date.parse(endtime) - Date.parse(new Date());
+                        var seconds = Math.floor((t / 1000) % 60);
+                        var minutes = Math.floor((t / 1000 / 60) % 60);
+                        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                        return {
+                            'total': t,
+                            'days': days,
+                            'hours': hours,
+                            'minutes': minutes,
+                            'seconds': seconds
+                        };
+                    }
 
+                    function initializeClock(id, endtime) {
+                        var clock = document.getElementById(id);
+                        var daysSpan = clock.querySelector('.days');
+                        var hoursSpan = clock.querySelector('.hours');
+                        var minutesSpan = clock.querySelector('.minutes');
+                        var secondsSpan = clock.querySelector('.seconds');
+
+                        function updateClock() {
+                            var t = getTimeRemaining(endtime);
+
+                            daysSpan.innerHTML = t.days;
+                            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                            if (t.total <= 0) {
+                                clearInterval(timeinterval);
+                            }
+                        }
+
+                        updateClock();
+                        var timeinterval = setInterval(updateClock, 1000);
+                    }
+
+                    var deadline = new Date(1520620200000);
+                    initializeClock('clockdiv', deadline);
+
+                </script>
             </div>
 
         </section>
@@ -147,7 +208,7 @@
                             <header>
                                 <h3 class="strong grey-text text-darken-2">About SB JAIN </h3>
                             </header>
-                            <p class="justified">S.B.Jain Institute of Technology, Management & Research (SBJITMR) is the initiative of Shri Shantilalji Badjate, who devoted his lifetime to the field of education. His dream to build a world class educational infrastructure led to the beginning of Sir Shantilal Badjate Charitable Trust, Nagpur. SBJITMR  is approved by AICTE (New Delhi) & DTE (Mumbai), is affiliated to Nagpur University (RTMNU) and is recognized by Government of Maharashtra. SBJITMR has carved a niche reputation for itself by imparting the quality education through highly qualified & experienced faculty members.
+                            <p class="justified">S.B.Jain Institute of Technology, Management & Research (SBJITMR) is the initiative of Shri Shantilalji Badjate, who devoted his lifetime to the field of education. His dream to build a world class educational infrastructure led to the beginning of Sir Shantilal Badjate Charitable Trust, Nagpur. SBJITMR is approved by AICTE (New Delhi) & DTE (Mumbai), is affiliated to Nagpur University (RTMNU) and is recognized by Government of Maharashtra. SBJITMR has carved a niche reputation for itself by imparting the quality education through highly qualified & experienced faculty members.
                             </p>
                         </section>
 
@@ -257,7 +318,7 @@
             <section class="wrapper style1 special" style="width: 100%; padding: 0px" id="venue-container">
 
                 <iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14877.90414732301!2d78.9733033!3d21.2129637!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x32dca0144110c4a8!2sS.+B.+Jain+Institute+of+Technology%2C+Management+%26+Research%2C+Nagpur!5e0!3m2!1sen!2sin!4v1516776996015" style="border:0;  width: 100%; height: 400px;" allowfullscreen></iframe>
-               
+
             </section>
 
         </article>
