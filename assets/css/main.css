@@ -5667,6 +5667,15 @@ body.index #main {
 
 .team-img {
     border-radius: 50% 0% 50% 50%;
+    -moz-transition: border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+    -webkit-transition: border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+    -ms-transition: border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.team-img:hover {
+    border-radius: 50% 0% 50% 0%;
+    transform: scale(1.1, 1.1);
 }
 
 .team-container > p {
